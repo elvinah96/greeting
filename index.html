@@ -133,19 +133,17 @@ function dispalyGreetings(today){
         document.getElementById('sec').innerHTML = seconds;
     }
 
-    function padZeros(num) {
+    function padZeros (num) {
             return num < 10 ? '0' + num : num;
         }
 
-    setInterval(displayClock, 1000);
-        displayClock();
     
     function dispalyWidget() {
         var today = new Date();
         dispalyGreetings(today);
         dispalyDate(today);
         dispalyClock(today);
-        setTimeout(dispalyWidget, 500);
+        setTimeout(dispalyWidget, 1000);
     }
 
     dispalyWidget()
