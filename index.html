@@ -127,34 +127,19 @@ function dispalyGreetings(today){
         var minutes = padZeros(today.getMinutes());
         var seconds = padZeros(today.getSeconds());
        
-        if(today.getHours() >=12){
-            seconds+=" pm"
-        }
-        else{
-            seconds+=" am"
-        }
        
         document.getElementById('hour').innerHTML = hour;
         document.getElementById('min').innerHTML = minutes;
         document.getElementById('sec').innerHTML = seconds;
     }
 
-    function twelveHour(hour) {
-        if (hour > 12) {
-            return hour -= 12
-        } else if (hour === 0) {
-            return hour = 12;
-        } else {
-            return hour
-        }
-    }
     function padZeros(num) {
-        if (num < 10) {
-            num = '0' + num
-        };
-        return num;
-    }
+            return num < 10 ? '0' + num : num;
+        }
 
+    setInterval(displayClock, 1000);
+        displayClock();
+    
     function dispalyWidget() {
         var today = new Date();
         dispalyGreetings(today);
